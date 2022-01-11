@@ -1,7 +1,7 @@
 {
   "name": "flevar_editor_website",
   "version": "1.0.0",
-  "description": "FlevaR is a declarative JavaScript game engine for creating 2D browser games and applications.",
+  "description": "The FlevaR Editor Official Website",
   "main": "server.js",
   "scripts": {
     "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
@@ -15,8 +15,7 @@
   },
   "keywords": [],
   "author": "Danidre",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.5",
     "ejs": "^3.1.6",
