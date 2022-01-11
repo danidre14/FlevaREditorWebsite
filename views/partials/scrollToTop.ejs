@@ -1,0 +1,116 @@
+<div id="scrollToTopDiv" class="fixed pointer-events-none z-30 bottom-0 w-full -mb-10">
+    <div class="cont">
+        <button id="scrollToTopBtn" class="block pointer-events-auto bg-black bg-opacity-70 rounded-md text-gray-100 ml-auto">
+            <span class="hidden">Scroll to Top</span>
+            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24" class="h-10 w-10">
+                <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+<script>
+    const scrollToDiv = (id, duration = 1000) => {
+        const element = document.getElementById(id);
+        if (!element) return;
+        const bodyRect = document.body.getBoundingClientRect();
+        const elemRect = element.getBoundingClientRect();
+        const offset = elemRect.top - bodyRect.top;
+        scrollToY(offset - 100, duration);
+    }
+
+    const scrollToY = (yPos, duration = 1000) => {
+        const anim = requestAnimationFrame((timestamp) => {
+            const stamp = timestamp || new Date().getTime();
+            const start = stamp;
+
+            const windowScrollY = window.scrollY;
+
+            scrollingToTop = true;
+            smoothScrollToY(Math.floor(yPos), start, stamp, duration, windowScrollY);
+        });
+    }
+    const scrollToTopDiv = document.getElementById("scrollToTopDiv");
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    scrollToTopBtn.onclick = () => {
+        scrollToY(0);
+    }
+
+    //easeIn function
+    const easeInCubic = function (t) {
+        return t * t * t;
+    };
+    function easeInOutCirc(x) {
+        return x < 0.5
+            ? (1 - Math.sqrt(1 - Math.pow(2 * x, 2))) / 2
+            : (Math.sqrt(1 - Math.pow(-2 * x + 2, 2)) + 1) / 2;
+    }
+    function easeOutBounce(x) {
+        const n1 = 7.5625;
+        const d1 = 2.75;
+
+        if (x < 1 / d1) {
+            return n1 * x * x;
+        } else if (x < 2 / d1) {
+            return n1 * (x -= 1.5 / d1) * x + 0.75;
+        } else if (x < 2.5 / d1) {
+            return n1 * (x -= 2.25 / d1) * x + 0.9375;
+        } else {
+            return n1 * (x -= 2.625 / d1) * x + 0.984375;
+        }
+    }
+
+    window.addEventListener("wheel", () => {
+        scrollingToTop = false;
+    });
+
+    window.addEventListener("scroll", () => {
+        handleScrollBtn();
+        // console.log(window.scrollY)
+    });
+
+    const handleScrollBtn = () => {
+        const atPageTop = window.scrollY <= window.innerHeight - 100;
+        const atPageBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 50;
+        const showScrollBtn = !atPageTop && !atPageBottom;
+        if (!showScrollBtn) {
+            scrollToTopDiv.classList.add("-mb-10");
+            scrollToTopDiv.classList.add("bg-opacity-100");
+            scrollToTopDiv.classList.remove("mb-6");
+        } else {
+            scrollToTopDiv.classList.add("mb-6");
+            scrollToTopDiv.classList.remove("bg-opacity-100");
+            scrollToTopDiv.classList.remove("-mb-10");
+        }
+    }
+
+    handleScrollBtn();
+
+    //scrollToTop animation function
+    let scrollingToTop = false;
+    const smoothScrollToY = (yPos, startTime, currentTime, duration, windowScrollY) => {
+        const runtime = currentTime - startTime;
+        let progress = runtime / duration;
+        progress = Math.min(progress, 1);
+
+        // const ease = easeInCubic(progress);
+        // const ease = easeOutBounce(progress);
+        const ease = easeInOutCirc(progress);
+
+        let yMovement = (yPos - windowScrollY) * ease;
+        if (windowScrollY > yPos)
+            yMovement = Math.max(yMovement, yPos - windowScrollY);
+        else
+            yMovement = Math.min(yMovement, yPos - windowScrollY);
+
+        window.scroll(0, windowScrollY + yMovement);
+        if (yMovement !== (yPos - windowScrollY) && scrollingToTop && windowScrollY !== yPos && runtime < duration) {
+            scrollingToTop = true;
+            requestAnimationFrame((timestamp) => {
+                const currentTime = timestamp || new Date().getTime();
+                smoothScrollToY(yPos, startTime, currentTime, duration, windowScrollY);
+            });
+        } else {
+            scrollingToTop = false;
+        }
+    };
+</script>

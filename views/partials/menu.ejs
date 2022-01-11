@@ -1,0 +1,58 @@
+<% var cPage; %>
+<div id="menuNav" class="menu-nav shadow-md bg-black bg-opacity-25 fixed z-50 top-0 left-0 w-full">
+    <div class="flex flex-col md:flex-row items-center py-6 md:py-12 mx-auto cont">
+        <div class="flex w-full items-center">
+            <a class="font-royal text-3xl font-bold" href="/">Keebee's Catering</a>
+            <button id="mobileMenuBtn" class="ml-auto block md:hidden w-10 h-10 bg-transparent">
+                <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                        clip-rule="evenodd"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="mr-auto md:ml-auto">
+            <nav id="mobileMenuNav" class="text-md uppercase md:flex flex-col md:flex-row">
+                <a class="block mt-3 md:mt-0 <%=cPage=='home'?'current-page':''%> menu-item" href="/">Home</a>
+                <a class="block mt-3 md:mt-0 <%=cPage=='about'?'current-page':''%> menu-item" href="/about">About</a>
+                <a class="block mt-3 md:mt-0 <%=cPage=='order'?'current-page':''%> menu-item"
+                    href="/order">Order</a>
+                <a class="block mt-3 md:mt-0 <%=cPage=='recipes'?'current-page':''%> menu-item"
+                    href="/recipes">Recipes</a>
+            </nav>
+        </div>
+    </div>
+</div>
+<script>
+    // for sticky menu
+    const menuNav = document.getElementById("menuNav");
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= 120) {
+            menuNav.classList.add("menu-nav-sticky");
+        } else {
+            menuNav.classList.remove("menu-nav-sticky");
+        }
+    });
+
+    // for mobile menu
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenuNav = document.getElementById("mobileMenuNav");
+    let mobileMenuOpen = false;
+    mobileMenuBtn.onclick = () => handleMobileMenuChange(!mobileMenuOpen);
+    mobileMenuNav.onblur = () => handleMobileMenuChange(false);
+    window.addEventListener("resize", () => handleMobileMenuChange());
+    const handleMobileMenuChange = (mobileMenuOption) => {
+        if (mobileMenuOption !== undefined)
+            mobileMenuOpen = mobileMenuOption;
+        if (mobileMenuOpen) {
+            mobileMenuNav.classList.add("flex");
+            mobileMenuNav.classList.add("mt-6");
+            mobileMenuNav.classList.remove("hidden");
+        } else {
+            mobileMenuNav.classList.remove("flex");
+            mobileMenuNav.classList.remove("mt-6");
+            mobileMenuNav.classList.add("hidden");
+        }
+    }
+    handleMobileMenuChange();
+</script>

@@ -1,0 +1,32 @@
+{
+  "name": "flevar_editor_website",
+  "version": "1.0.0",
+  "description": "FlevaR is a declarative JavaScript game engine for creating 2D browser games and applications.",
+  "main": "server.js",
+  "scripts": {
+    "build:css": "postcss public/stylesheets/tailwind.css -o public/stylesheets/style.css",
+    "start": "node server.js",
+    "devBuildStart": "nodemon --ignore public/javascripts/ --watch tailwind.css --watch *.* --exec npm start",
+    "dev": "nodemon server.js",
+    "publish": "git add . && git commit -m",
+    "postpublish": "git push && caprover deploy --default",
+    "export": "git add . && git commit -m",
+    "postexport": "git push"
+  },
+  "keywords": [],
+  "author": "Danidre",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.0",
+    "method-override": "^3.0.0"
+  },
+  "devDependencies": {
+    "dotenv": "^9.0.2",
+    "nodemon": "^2.0.7",
+    "tailwindcss": "^2.2.4"
+  }
+}

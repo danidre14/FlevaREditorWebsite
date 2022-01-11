@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .cont {
+    @apply container py-0;
+  }
+  .p-start {
+      @apply text-royal-500 font-royal text-4xl;
+  }
+  .menu-item {
+    @apply ml-5 md:ml-8 hover:text-royal-500 cursor-pointer;
+  }
+  .menu-nav {
+    @apply text-white;
+    background-size: 100% 200%;
+    background-image: linear-gradient(to bottom, #0ff0 50%, white 50%);
+    transition: color 400ms, background-position 400ms ease;
+  }
+  .menu-nav-sticky {
+    @apply text-gray-800;
+    background-position: 0 -100%;
+  }
+
+  .menu-nav > div {
+    transition: padding 400ms;
+  }
+
+  .menu-nav-sticky > div {
+    @apply md:py-6;
+  }
+  .menu-nav-sticky .current-page::before,
+  .menu-nav-sticky .current-page::after {
+    @apply bg-gray-800;
+  }
+  .current-page {
+    @apply text-royal-500 relative;
+  }
+  .current-page::before {
+    @apply -left-3;
+  }
+  .current-page::after {
+    @apply -right-3;
+  }
+  .current-page::before,
+  .current-page::after {
+    @apply absolute top-1/2 -mt-0.5 w-1 h-1 bg-white rounded-full;
+    content: "";
+    transition: all 400ms;
+  }
+  
+    .section-title {
+        @apply relative inline-block text-5xl mt-16 mb-1 text-royal-500;
+        font-family: "Font Royal";
+    }
+    .section-title::before {
+        @apply -left-7;
+    }
+    .section-title::after {
+        @apply -right-7;
+    }
+    .section-title::before,
+    .section-title::after {
+        @apply absolute top-1/2 -mt-1 w-2 h-2 bg-royal-500 rounded-full;
+        content: "";
+    }
+
+    .section-subtitle {
+        @apply mt-1 mb-14 uppercase text-2xl;
+    }
+
+    .section-divider {
+        @apply relative -top-2 left-0 w-full z-10
+    }
+
+    .order-btn {
+      @apply bg-blue-400 hover:bg-blue-500 active:bg-blue-300 text-gray-50;
+    }
+}

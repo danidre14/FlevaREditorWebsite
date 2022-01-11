@@ -1,0 +1,23 @@
+@import "fonts.css";
+/* 
+:root {
+  --vh: 1vh;
+} */
+
+.h-screen-2 {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.menuPortionItem.selected {
+  background: #DDF;
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 4px #0006, -1px -1px 4px #0006, 1px -1px 4px #0006, -1px 1px 4px #0006;
+}
+
+
+#scrollToTopDiv {
+  transition: margin-bottom 400ms;
+}
