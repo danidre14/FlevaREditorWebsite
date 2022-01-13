@@ -1,15 +1,13 @@
-<% var cPage;
-var dLinks;
-if(dLinks === undefined) dLinks = {}; %>
+<% var cPage; var dLinks; if(dLinks===undefined) dLinks={}; %>
 
-    <div id="menuNav" class="menu-nav shadow-md bg-black bg-opacity-25 fixed z-50 top-0 left-0 w-full">
+    <div id="menuNav" class="menu-nav shadow-sm bg-black bg-opacity-40 fixed z-50 top-0 left-0 w-full">
         <div class="flex flex-col md:flex-row items-center py-3 md:py-3 mx-auto cont">
             <div class="flex w-full items-center">
                 <a class="text-3xl font-bold" href="/">
-                    <img class="w-32" src="/images/navbar-logo.png"
-                        alt="FlevaR Editor Navbar Logo" title="FlevaR Editor">
+                    <img class="w-32" src="/images/navbar-logo.png" alt="FlevaR Editor Navbar Logo"
+                        title="FlevaR Editor">
                 </a>
-                <button id="mobileMenuBtn" class="ml-auto block md:hidden w-10 h-10 bg-transparent">
+                <button id="mobileMenuBtn" class="ml-auto text-flevar-p1 block md:hidden w-10 h-10 bg-transparent">
                     <svg fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
@@ -19,7 +17,8 @@ if(dLinks === undefined) dLinks = {}; %>
             </div>
             <div class="mr-auto md:ml-auto">
                 <nav id="mobileMenuNav" class="text-2xl md:flex flex-col md:flex-row">
-                    <a class="block mt-3 md:mt-0 <%=cPage=='learn'?'current-page':''%> menu-item" href="/#learn">Learn</a>
+                    <a class="block mt-3 md:mt-0 <%=cPage=='learn'?'current-page':''%> menu-item"
+                        href="/#learn">Learn</a>
                     <a class="block mt-3 md:mt-0 <%=cPage=='about'?'current-page':''%> menu-item"
                         href="/#about">About</a>
                     <a class="block mt-3 md:mt-0 <%=cPage=='create'?'current-page':''%> menu-item"
@@ -52,11 +51,9 @@ if(dLinks === undefined) dLinks = {}; %>
                 mobileMenuOpen = mobileMenuOption;
             if (mobileMenuOpen) {
                 mobileMenuNav.classList.add("flex");
-                mobileMenuNav.classList.add("mt-6");
                 mobileMenuNav.classList.remove("hidden");
             } else {
                 mobileMenuNav.classList.remove("flex");
-                mobileMenuNav.classList.remove("mt-6");
                 mobileMenuNav.classList.add("hidden");
             }
         }
@@ -64,10 +61,20 @@ if(dLinks === undefined) dLinks = {}; %>
     </script>
     <script>
         // script for responsive viewport height
+        const tailwindMDWidth = 768;
+        const tailwindMenuYMargin = "mt-6";
         const vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);
         window.addEventListener("resize", () => {
             const vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+            const sw = window.innerWidth
+            // console.log(vw)
+            if (sw >= tailwindMDWidth && mobileMenuNav.classList.contains(tailwindMenuYMargin)) {
+                mobileMenuNav.classList.remove(tailwindMenuYMargin);
+            } else if(sw < tailwindMDWidth && !mobileMenuNav.classList.contains(tailwindMenuYMargin)) {
+                mobileMenuNav.classList.add(tailwindMenuYMargin);
+            }
         });
     </script>

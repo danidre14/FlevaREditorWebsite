@@ -1,29 +1,33 @@
 <section class="h-full bg-flevar-p3 text-flevar-p1">
-        <div class="cont">
-            <div class="pb-20 pt-28 md:flex items-center flex-row gap-20">
-                <div class="w-5/12 mb-6">
-                    <div class="mb-7 text-9xl">
-                        FlevaR
-                        <br/>
-                        Editor
-                    </div>
-                    <div class="text-2xl sm:text-2xl font-normal mb-4">
-                        <div class="mb-3">
-                            FlevaR is a declarative JavaScript game engine for creating 2D browser games and
-                            applications.
-                        </div>
-                    </div>
-                    <div class="text-lg text-flevar-p1 font-light mt-28">Explore and create!</div>
-                    <a class="text-flevar-p1 bg-flevar-p5 hover:bg-flevar-p4 inline-block mt-6 lg:py-3 lg:px-24 lg:rounded-xl lg:text-2xl mr-8 py-2 px-20 text-xl rounded-lg "
-                        href="/#learn">Learn</a>
-                    <a class="text-flevar-p1 inline-block mt-6 py-3 px-24 bg-flevar-p5 rounded-xl hover:bg-flevar-p4 text-2xl"
-                        href=<%=dLinks.create||"/#create"%> target="blank_">Editor</a>
+    <div class="cont">
+        <div class="pb-20 pt-12 xl:pt-28 text-center xl:text-left xl:flex items-center flex-row gap-20">
+            <div class="xl:w-5/12 mb-20 md:mb-6">
+                <div class="mt-12 mb-20 sm:mt-4 sm:mb-7 text-6xl sm:text-8xl md:text-9xl">
+                    FlevaR Editor
                 </div>
-                <div class="flex-1 box-shadow h-full flex items-center justify-center overflow-hidden">
+                <div class="w-4/6 md:w-4/5 xl:w-full mx-auto text-base md:text-xl xl:text-2xl font-normal mb-4">
+                    <div class="mb-3">
+                        FlevaR is a declarative JavaScript game engine for creating 2D browser games and
+                        applications.
+                    </div>
+                </div>
+                <div class="hidden xl:block text-lg text-flevar-p1 font-light mt-28">
+                    Explore and create!
+                </div>
+                <a class="text-flevar-p1 bg-flevar-p5 hover:bg-flevar-p4 inline-block mt-6 2xl:py-3 2xl:px-24 2xl:rounded-xl 2xl:text-2xl md:mr-8 py-2 px-20 text-xl rounded-lg"
+                    href="/#learn">Learn</a>
+                <a class="hidden md:inline-block text-flevar-p1 bg-flevar-p5 hover:bg-flevar-p4 mt-6 2xl:py-3 2xl:px-24 2xl:rounded-xl 2xl:text-2xl py-2 px-20 text-xl rounded-lg"
+                    href=<%=dLinks.create||"/#create"%> target="blank_">Editor</a>
+            </div>
+            <div class="mt-12 mx-auto flex-1 w-4/5 h-full items-center justify-center">
+                <div class="mx-auto flex-1 box-shadow w-full h-full flex items-center justify-center overflow-hidden">
                     <img class="w-full" src="/images/hero-images/home-hero-image.jpg"
                         alt="FlevaR Editor - create games and applications" title="Create your FlevaR applications">
                 </div>
+                <div class="mt-8 text-center text-base italic text-flevar-p2">
+                    (Currently in heavy development)
+                </div>
             </div>
-
         </div>
-    </section>
+    </div>
+</section>

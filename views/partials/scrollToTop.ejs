@@ -78,14 +78,18 @@
         const atPageTop = window.scrollY <= window.innerHeight - 100;
         const atPageBottom = (window.innerHeight + window.scrollY) >= document.body.scrollHeight - 50;
         const showScrollBtn = !atPageTop && !atPageBottom;
-        if (!showScrollBtn) {
+        if (atPageTop) {
             scrollToTopDiv.classList.add("-mb-10");
-            scrollToTopDiv.classList.add("bg-opacity-100");
             scrollToTopDiv.classList.remove("mb-6");
-        } else {
-            scrollToTopDiv.classList.add("mb-6");
-            scrollToTopDiv.classList.remove("bg-opacity-100");
+            scrollToTopDiv.classList.remove("mb-20");
+        } else if(atPageBottom) {
             scrollToTopDiv.classList.remove("-mb-10");
+            scrollToTopDiv.classList.remove("mb-6");
+            scrollToTopDiv.classList.add("mb-20");
+        } else {
+            scrollToTopDiv.classList.remove("-mb-10");
+            scrollToTopDiv.classList.remove("mb-20");
+            scrollToTopDiv.classList.add("mb-6");
         }
     }
 
@@ -99,9 +103,9 @@
         progress = Math.min(progress, 1);
 
         // const ease = easeInCubic(progress);
-        const ease = easeInLinear(progress);
+        // const ease = easeInLinear(progress);
         // const ease = easeOutBounce(progress);
-        // const ease = easeInOutCirc(progress);
+        const ease = easeInOutCirc(progress);
 
         let yMovement = (yPos - windowScrollY) * ease;
         if (windowScrollY > yPos)
