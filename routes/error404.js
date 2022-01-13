@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 router.use(async (req, res, next) => {
-    res.status(404);
+    res.status(404).redirect("/");
     // respond with html page
     if (req.accepts("html")) {
         const headerInfo = {

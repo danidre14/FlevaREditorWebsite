@@ -2,12 +2,9 @@ const express = require("express");
 const router = express.Router();
 
 router.get("/", (req, res) => {
-    const headerInfo = {
-        title: "Welcome to Keebee's Catering",
-        desc: "Better quality. Unbeatable prices."
-    }
-    let vars = { cPage: "home", headerInfo, title: "Home" };
-    
+    const createLink = process.env.NODE_ENV !== "production" ? "#create" : "https://editor.flevar.com/";
+    let vars = { cPage: "home", title: "Home", dLinks: { create: createLink } };
+
     res.render("index", vars);
 });
 

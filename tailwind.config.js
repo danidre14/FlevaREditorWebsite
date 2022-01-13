@@ -1,5 +1,5 @@
 module.exports = {
-  mode: "jit",
+  // mode: "jit",
   purge: [
     "./views/**/*.ejs",
     "./views/*.ejs",
@@ -24,11 +24,20 @@ module.exports = {
           "700": "#634f30",
           "800": "#3b2f1c",
           "900": "#141009",
+        },
+        flevar: {
+          "p1": "#E5E5E5",
+          "p2": "#6F737F",
+          "p3": "#3B4050",
+          "p4": "#252935",
+          "p5": "#181C25",
+          "s1": "#F0F2F3",
+          "s2": "#E54D26",
+          "s3": "#AA391C"
         }
       },
       fontFamily: {
         custom: '"Custom Sans", "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif',
-        royal: '"Font Royal"',
       }
     },
     // container: {
@@ -43,31 +52,31 @@ module.exports = {
     },
   },
   corePlugins: {
-    container: false
+    // container: false
   },
   plugins: [
-    function ({ addComponents }) {
-      addComponents({
-        ".container": {
-          "@apply p-4 mx-auto": {},
-          width: "100%",
-          "@screen sm": { // >640
-            maxWidth: "600px",
-          },
-          "@screen md": { // >768
-            maxWidth: "720px",
-          },
-          "@screen lg": { // >1024
-            maxWidth: "960px",
-          },
-          "@screen xl": { // >1280
-            maxWidth: "1140px",
-          },
-          "@screen 2xl": { // >1536
-            maxWidth: "1380px",
-          },
-        }
-      })
-    }
+    // function ({ addComponents }) {
+    //   addComponents({
+    //     ".container": {
+    //       "@apply p-4 mx-auto": {},
+    //       width: "100%",
+    //       "@screen sm": { // >640
+    //         maxWidth: "600px",
+    //       },
+    //       "@screen md": { // >768
+    //         maxWidth: "720px",
+    //       },
+    //       "@screen lg": { // >1024
+    //         maxWidth: "960px",
+    //       },
+    //       "@screen xl": { // >1280
+    //         maxWidth: "1140px",
+    //       },
+    //       "@screen 2xl": { // >1536
+    //         maxWidth: "1380px",
+    //       },
+    //     }
+    //   })
+    // }
   ]
 }

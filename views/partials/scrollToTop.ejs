@@ -1,6 +1,6 @@
 <div id="scrollToTopDiv" class="fixed pointer-events-none z-30 bottom-0 w-full -mb-10">
     <div class="cont">
-        <button id="scrollToTopBtn" class="block pointer-events-auto bg-black bg-opacity-70 rounded-md text-gray-100 ml-auto">
+        <button id="scrollToTopBtn" class="block pointer-events-auto bg-flevar-p4 box-shadow-sm rounded-md text-flevar-p1 ml-auto">
             <span class="hidden">Scroll to Top</span>
             <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 24 24" class="h-10 w-10">
                 <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z"></path>
@@ -38,6 +38,12 @@
     //easeIn function
     const easeInCubic = function (t) {
         return t * t * t;
+    };
+    const easeInSquared = function (t) {
+        return t * t;
+    };
+    const easeInLinear = function (t) {
+        return t;
     };
     function easeInOutCirc(x) {
         return x < 0.5
@@ -93,8 +99,9 @@
         progress = Math.min(progress, 1);
 
         // const ease = easeInCubic(progress);
+        const ease = easeInLinear(progress);
         // const ease = easeOutBounce(progress);
-        const ease = easeInOutCirc(progress);
+        // const ease = easeInOutCirc(progress);
 
         let yMovement = (yPos - windowScrollY) * ease;
         if (windowScrollY > yPos)

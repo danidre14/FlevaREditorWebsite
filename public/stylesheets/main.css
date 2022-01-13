@@ -9,12 +9,15 @@
   height: calc(var(--vh, 1vh) * 100);
 }
 
-.menuPortionItem.selected {
-  background: #DDF;
-}
-
 .text-shadow {
   text-shadow: 1px 1px 4px #0006, -1px -1px 4px #0006, 1px -1px 4px #0006, -1px 1px 4px #0006;
+}
+
+.box-shadow {
+  box-shadow: 3px 3px 13px #0006;
+}
+.box-shadow-sm {
+  box-shadow: 2px 2px 5px #0006;
 }
 
 

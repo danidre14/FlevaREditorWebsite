@@ -5,7 +5,7 @@
   <% var title; %>
   <% title=title? ` | ${title}` : '' ;%>
       <title>
-          <%= `Keebee's Catering${title}`%>
+          <%= `FlevaR Editor${title}`%>
       </title>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -18,11 +18,11 @@
 </head>
 
 <body>
-  <div class="min-h-full flex flex-col items-stretch bg-red-50 font-custom text-gray-800">
+  <div class="min-h-full flex flex-col items-stretch bg-flevar-p3 font-custom text-flevar-p1">
     <%- include("../partials/menu.ejs") %>
     
-      <main id="main" class="bg-white flex-grow min-h-full shadow-md">
-        <div class=" min-h-full">
+      <main id="main" class="bg-flevar-p3 flex-grow min-h-full shadow-md">
+        <div class="mt-20 min-h-full">
           <%- body %>
         </div>
       </main>

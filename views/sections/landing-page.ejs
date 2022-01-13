@@ -1,113 +1,29 @@
-<% var sectionTheme; var bgCol=sectionTheme==="light" ? "gray-100" : "gray-800" ; var textCol=sectionTheme==="light"
-    ? "gray-800" : "gray-300" ; %>
-    <section class="<%= `bg-${bgCol}` %> <%= `text-${textCol}` %>">
-        <%- include("section-divider.ejs", { fillColour: `text-${bgCol}` }) %>
-            <div class="cont">
-                <div class="text-center">
-                    <h4 class="section-title">Features Offered</h4>
-                    <h5 class="section-subtitle text-gray-100">What we do at Keebee's Catering</h5>
+<section class="h-full bg-flevar-p3 text-flevar-p1">
+        <div class="cont">
+            <div class="pb-20 pt-28 md:flex items-center flex-row gap-20">
+                <div class="w-5/12 mb-6">
+                    <div class="mb-7 text-9xl">
+                        FlevaR
+                        <br/>
+                        Editor
+                    </div>
+                    <div class="text-2xl sm:text-2xl font-normal mb-4">
+                        <div class="mb-3">
+                            FlevaR is a declarative JavaScript game engine for creating 2D browser games and
+                            applications.
+                        </div>
+                    </div>
+                    <div class="text-lg text-flevar-p1 font-light mt-28">Explore and create!</div>
+                    <a class="text-flevar-p1 bg-flevar-p5 hover:bg-flevar-p4 inline-block mt-6 lg:py-3 lg:px-24 lg:rounded-xl lg:text-2xl mr-8 py-2 px-20 text-xl rounded-lg "
+                        href="/#learn">Learn</a>
+                    <a class="text-flevar-p1 inline-block mt-6 py-3 px-24 bg-flevar-p5 rounded-xl hover:bg-flevar-p4 text-2xl"
+                        href=<%=dLinks.create||"/#create"%> target="blank_">Editor</a>
                 </div>
-
-                <div class="pb-20 md:flex flex-row gap-6">
-                    <div class="flex-1 mb-6">
-                        <div class="text-xl text-gray-100 italic mb-2">Thinking about lunch?</div>
-                        <div class="text-royal-500 mb-7 font-royal text-4xl">Fast Food Pickup or Delivery</div>
-                        <div class="text-base sm:text-lg font-normal mb-4">
-                            <div class="mb-3">
-                                Our menu varies daily to always keep the kitchen active, and your tastebuds excited!
-                            </div>
-                            <div>
-                                Order during our opening
-                                hours and collect or have your meals delivered to you.
-                            </div>
-                        </div>
-                        <div class="text-base italic text-gray-400 font-light mb-4">Delivery service availability varies
-                            based on location.</div>
-                        <a class="text-gray-100 inline-block mt-6 py-2 px-8 bg-royal-500 hover:bg-royal-400 uppercase text-xl"
-                            href="/order">Order Now</a>
-                    </div>
-                    <div class="flex-1 max-h-96 flex items-center justify-center overflow-hidden">
-                        <img class="shadow-md w-full" src="/images/features-images/features-sample-fastfood.jpg"
-                            alt="Catering Services Feature Image">
-                    </div>
-                </div>
-
-                <div class="pb-20 md:flex flex-row-reverse gap-6">
-                    <div class="flex-1 mb-6">
-                        <div class="text-xl text-gray-100 italic mb-2">Planning a special occasion?</div>
-                        <div class="text-royal-500 mb-7 font-royal text-4xl">Catering Services</div>
-                        <div class="text-base sm:text-lg font-normal mb-4">
-                            <div class="mb-3">
-                                Graduations, office parties, anniversaries, baby showers...
-                                <br />
-                                We create cakes for weddings, foods for
-                                parties, treats for mini-events, you name it!
-                            </div>
-                            <div>
-                                Just contact us to get
-                                started on planning your culinaries delicacies.
-                            </div>
-                        </div>
-                        <div class="text-base italic text-gray-400 font-light mb-4">Prices may vary based on location.
-                        </div>
-                        <a class="text-gray-100 inline-block mt-6 py-2 px-8 bg-royal-500 hover:bg-royal-400 uppercase text-xl"
-                            target="_blank" href="https://www.facebook.com/Keebees-Catering-124650368926874/">Contact
-                            Us</a>
-                    </div>
-                    <div class="flex-1 max-h-96 flex items-center justify-center overflow-hidden">
-                        <img class="shadow-md w-full" src="/images/features-images/features-sample-catering.jpg"
-                            alt="Catering Services Feature Image">
-                    </div>
-                </div>
-
-                <div class="pb-20 md:flex flex-row gap-6">
-                    <div class="flex-1 mb-6">
-                        <div class="text-xl text-gray-100 italic mb-2">In need of cutlery?</div>
-                        <div class="text-royal-500 mb-7 font-royal text-4xl">Rental and Maintainance</div>
-                        <div class="text-base sm:text-lg font-normal mb-4">
-                            <div class="mb-3">
-                                Hosting a wedding or elegant event? We
-                                provide various cuttleries: utensils, plates, glasses, even chair covers.
-                            </div>
-                            <div class="mb-3">
-                                Party over? We also provide ushering, after
-                                service cleanup, and other maintainance services.
-                            </div>
-                        </div>
-                        <div class="text-base italic text-gray-400 font-light mb-4">Suitable for occasions with a
-                            maximum of 300 persons.</div>
-                        <a class="text-gray-100 inline-block mt-6 py-2 px-8 bg-royal-500 hover:bg-royal-400 uppercase text-xl"
-                            target="_blank" href="https://www.facebook.com/Keebees-Catering-124650368926874/">Reserve Services</a>
-                    </div>
-                    <div class="flex-1 max-h-96 flex items-center justify-center overflow-hidden">
-                        <img class="shadow-md w-full" src="/images/features-images/features-sample-cutlery.jpg"
-                            alt="Catering Services Feature Image">
-                    </div>
-                </div>
-
-                <div class="pb-20 md:flex flex-row-reverse gap-6">
-                    <div class="flex-1 mb-6">
-                        <div class="text-xl text-gray-100 italic mb-2">From our kitchens into your homes!</div>
-                        <div class="text-royal-500 mb-7 font-royal text-4xl">Custom Recipes</div>
-                        <div class="text-base sm:text-lg font-normal mb-4">
-                            <div class="mb-3">
-                                Need our secret ingredients? Is the location
-                                too far for daily visits?
-                            </div>
-                            <div>
-                                View our recipes online now and enjoy
-                                your favourite foods wherever most convenient for you!
-                            </div>
-                        </div>
-                        <div class="text-base italic text-gray-400 font-light mb-4">Our recipes are crafted with over 20
-                            years of culinary experience.</div>
-                        <a class="text-gray-100 inline-block mt-6 py-2 px-8 bg-royal-500 hover:bg-royal-400 uppercase text-xl"
-                            href="/recipes">Get Recipes</a>
-                    </div>
-                    <div class="flex-1 max-h-96 flex items-center justify-center overflow-hidden">
-                        <img class="shadow-md w-full" src="/images/features-images/features-sample-recipes.jpg"
-                            alt="Catering Services Feature Image">
-                    </div>
+                <div class="flex-1 box-shadow h-full flex items-center justify-center overflow-hidden">
+                    <img class="w-full" src="/images/hero-images/home-hero-image.jpg"
+                        alt="FlevaR Editor - create games and applications" title="Create your FlevaR applications">
                 </div>
             </div>
+
+        </div>
     </section>
