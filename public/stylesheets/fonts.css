@@ -1,7 +1,7 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-Black.ttf") format("truetype");
+	src: url("/fonts/Raleway-Black.ttf") format("truetype");
 	font-weight: 900;
 	font-style: normal;
 }
@@ -9,7 +9,7 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-BlackItalic.ttf") format("truetype");
+	src: url("/fonts/Raleway-BlackItalic.ttf") format("truetype");
 	font-weight: 900;
 	font-style: italic;
 }
@@ -17,7 +17,23 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-Bold.ttf") format("truetype");
+	src: url("/fonts/Raleway-ExtraBold.ttf") format("truetype");
+	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-ExtraBoldItalic.ttf") format("truetype");
+	font-weight: 800;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-Bold.ttf") format("truetype");
 	font-weight: bold;
 	font-style: normal;
 }
@@ -25,7 +41,7 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-BoldItalic.ttf") format("truetype");
+	src: url("/fonts/Raleway-BoldItalic.ttf") format("truetype");
 	font-weight: bold;
 	font-style: italic;
 }
@@ -33,7 +49,23 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-Semibold.ttf") format("truetype");
+	src: url("/fonts/Raleway-Semibold.ttf") format("truetype");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-SemiboldItalic.ttf") format("truetype");
+	font-weight: 600;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-Medium.ttf") format("truetype");
 	font-weight: 500;
 	font-style: normal;
 }
@@ -41,7 +73,7 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-SemiboldItalic.ttf") format("truetype");
+	src: url("/fonts/Raleway-MediumItalic.ttf") format("truetype");
 	font-weight: 500;
 	font-style: italic;
 }
@@ -49,39 +81,63 @@
 @font-face {
 	font-family: "Custom Sans";
 	font-display: swap;
-	src: url("/fonts/SourceSansPro-Light.ttf") format("truetype");
-	font-weight: 300;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Custom Sans";
-	font-display: swap;
-	src: url("/fonts/SourceSansPro-LightItalic.ttf") format("truetype");
-	font-weight: 300;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: "Custom Sans";
-	font-display: swap;
-	src: url("/fonts/SourceSansPro-ExtraLight.ttf") format("truetype");
-	font-weight: 100;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: "Custom Sans";
-	font-display: swap;
-	src: url("/fonts/SourceSansPro-ExtraLightItalic.ttf") format("truetype");
-	font-weight: 100;
-	font-style: italic;
-}
-
-@font-face {
-	font-family: "Custom Sans";
-	font-display: swap;
-	src: url("/fonts/SourceSansPro-Regular.ttf") format("truetype");
+	src: url("/fonts/Raleway-Regular.ttf") format("truetype");
 	font-weight: normal;
 	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-Italic.ttf") format("truetype");
+	font-weight: normal;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-Light.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-LightItalic.ttf") format("truetype");
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-ExtraLight.ttf") format("truetype");
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
+	font-weight: 200;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-Thin.ttf") format("truetype");
+	font-weight: 100;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Custom Sans";
+	font-display: swap;
+	src: url("/fonts/Raleway-ThinItalic.ttf") format("truetype");
+	font-weight: 100;
+	font-style: italic;
 }
