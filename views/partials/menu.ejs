@@ -17,13 +17,14 @@
             </div>
             <div class="mr-auto md:ml-auto">
                 <nav id="mobileMenuNav" class="text-2xl md:flex flex-col md:flex-row">
-                    <a class="block mt-3 md:mt-0 <%=cPage=='learn'?'current-page':''%> menu-item"
-                        href="/#learn">Learn</a>
-                    <a class="block mt-3 md:mt-0 <%=cPage=='about'?'current-page':''%> menu-item"
-                        href="/#about">About</a>
+                    <a class="block mt-3 md:mt-0 <%=cPage=='github'?'current-page':''%> menu-item"
+                        href="https://github.com/danidre14/FlevaR/wiki" target="_blank">Learn</a>
                     <a class="block mt-3 md:mt-0 <%=cPage=='create'?'current-page':''%> menu-item"
-                        href=<%=dLinks.create||"/#create"%> target="blank_">Create</a>
-                    <a class="block mt-3 md:mt-0 <%=cPage=='blog'?'current-page':''%> menu-item" href="/#blog">Blog</a>
+                        href=<%=dLinks.create||"/#create"%> target="_blank">Create</a>
+                    <a class="block mt-3 md:mt-0 <%=cPage=='trello'?'current-page':''%> menu-item"
+                        href="https://trello.com/b/eI9Zycyi/flevar-editor" target="_blank">Trello</a>
+                    <a class="block mt-3 md:mt-0 <%=cPage=='npm'?'current-page':''%> menu-item"
+                        href="https://www.npmjs.com/package/flevar" target="_blank">NPM</a>
                 </nav>
             </div>
         </div>
@@ -73,7 +74,7 @@
             // console.log(vw)
             if (sw >= tailwindMDWidth && mobileMenuNav.classList.contains(tailwindMenuYMargin)) {
                 mobileMenuNav.classList.remove(tailwindMenuYMargin);
-            } else if(sw < tailwindMDWidth && !mobileMenuNav.classList.contains(tailwindMenuYMargin)) {
+            } else if (sw < tailwindMDWidth && !mobileMenuNav.classList.contains(tailwindMenuYMargin)) {
                 mobileMenuNav.classList.add(tailwindMenuYMargin);
             }
         });
