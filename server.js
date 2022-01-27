@@ -9,6 +9,7 @@ const cookieParser = require("cookie-parser");
 const methodOverride = require('method-override');
 
 const indexRouter = require("./routes/index");
+const sandboxSamplesRouter = require("./routes/sandboxSamples");
 
 const error404Router = require('./routes/error404');
 
@@ -26,6 +27,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ limit: "10mb", extended: false }));
 
 app.use("/", indexRouter);
+app.use("/sandbox-samples/", sandboxSamplesRouter);
 
 app.use(error404Router); //make sure to put this after all routes
 
